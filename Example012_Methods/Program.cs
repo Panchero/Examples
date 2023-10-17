@@ -43,18 +43,34 @@ Console.WriteLine(year);
 */
 
 
-
+/* 
 //--- Вид 4. Методы которые что-то принимают, что-то возвращают ---//
 string Method4(int count, string text)
 {
     int i = 0; // возьмем цикл
     string result = String.Empty; // переменная, куда будем класть конечный результат  =  пустая строка
-while (i<count)
+while (i<count) // цикл 
 {
     result = result + text;
     i++;
 }
 return result;
+}
+
+string res = Method4(10, "asfd");
+Console.WriteLine(res);
+*/
+
+
+
+string Method4(int count, string text)
+{
+    string result = String.Empty; // переменная, куда будем класть конечный результат  =  пустая строка
+    for (int i = 0;i < count; i++) // инициализация счетчка; проверка условия; инкремент (увеличение счетчика)
+    {
+        result = result + text;
+    }
+    return result;
 }
 
 string res = Method4(10, "asfd");
