@@ -90,6 +90,8 @@ for (int i = 2; i <= 10; i++)
 }
 */
 
+
+/*
 // Задача: Дан текст. В тексте нужно все пробелы заменить черточками, //
 // маленькие буквы "к" заменить большими "К" . а большие "С" заменить маленькими "с" //
 
@@ -125,3 +127,38 @@ Console.WriteLine(newText);
 Console.WriteLine();
 newText = Replace(newText, 'С', 'с');
 Console.WriteLine(newText);
+
+*/
+
+int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 }; // задаем массив
+void PrintArray(int[] array) // метод вывода масcива на экран
+{
+    int count = array.Length; // счетчик = длина массива
+    for (int i = 0; i < count; i++) // цикл: если i = 0 меньше счетчика, добавляй единицу
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+void SelectionSort(int[] array) // метод для упорядочивания массива (в качестве аргумента приходит массив)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i; // находим самую меньшую позицию
+        for (int j = i + 1; j < array.Length; j++)
+    {
+        if (array[j] < array[minPosition]) minPosition = j;
+    }
+
+    //замена элемента//
+    int temporary = array[i];
+    array[i] = array[minPosition];
+    array[minPosition] = temporary;
+}
+}
+
+PrintArray(arr);
+SelectionSort(arr);
+
+PrintArray(arr);
